@@ -4,7 +4,7 @@ import com.example.dagger2.MainActivity;
 
 import dagger.Component;
 
-@Component (modules = {WheelsModule.class, PetrolEngineModule.class})
+@Component (modules = {WheelsModule.class, DieselEngineModule.class})
 public interface CarComponent {
 
     //Car getCar(); // implemented by dagger through annotation processing

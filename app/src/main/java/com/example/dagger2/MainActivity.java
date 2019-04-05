@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.example.dagger2.car.Car;
 import com.example.dagger2.dagger.CarComponent;
 import com.example.dagger2.dagger.DaggerCarComponent;
+import com.example.dagger2.dagger.DieselEngineModule;
 
 import javax.inject.Inject;
 
@@ -22,7 +23,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CarComponent component = DaggerCarComponent.create(); //implementation for the interface
+        //CarComponent component = DaggerCarComponent.create(); //implementation for the interface
+        CarComponent component = DaggerCarComponent.builder()
+                .dieselEngineModule( new DieselEngineModule(100))
+                .build();
+
+
+
         component.inject(this); // (field injection) inject member variables line 9
 
         //car = component.getCar(); //no need to instantiate all the classes ourselves dagger takes care of it.

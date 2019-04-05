@@ -8,11 +8,22 @@ public class DieselEngine implements Engine{
 
     private static final String TAG = "DieselEngine";
 
-    @Inject
-    public DieselEngine() {}
+    // horsePower value will be pass at run time
+    private int horsePower;
+
+
+    public DieselEngine(int horsePower) {
+        this.horsePower = horsePower;
+    }
+
+
+//    @Inject
+//    public DieselEngine() {
+//
+//    }
 
     @Override
     public void start() {
-        Log.d(TAG, "Diesel Engine started: ");
+        Log.d(TAG, "Diesel Engine started:  HorsePower" + horsePower);
     }
 }
