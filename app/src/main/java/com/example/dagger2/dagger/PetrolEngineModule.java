@@ -1,7 +1,7 @@
 package com.example.dagger2.dagger;
 
 import com.example.dagger2.car.Engine;
-import com.example.dagger2.car.PertrolEngine;
+import com.example.dagger2.car.PetrolEngine;
 
 import dagger.Binds;
 import dagger.Module;
@@ -26,7 +26,7 @@ public abstract class PetrolEngineModule {
 //    }
 
     @Binds
-    abstract Engine bindEngine(PertrolEngine engine);
+    abstract Engine bindEngine(PetrolEngine engine);
 
 
 }

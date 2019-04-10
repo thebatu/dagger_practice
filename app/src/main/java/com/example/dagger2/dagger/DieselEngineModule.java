@@ -2,7 +2,6 @@ package com.example.dagger2.dagger;
 
 import com.example.dagger2.car.DieselEngine;
 import com.example.dagger2.car.Engine;
-import com.example.dagger2.car.PertrolEngine;
 
 import dagger.Binds;
 import dagger.Module;
@@ -35,8 +34,13 @@ public class DieselEngineModule {
     }
 
     @Provides
-    Engine provideEngine(){
-        return new DieselEngine(horsePower);
+    int provideHorsePower(){
+        return horsePower;
+    }
+
+    @Provides
+    Engine provideEngine(DieselEngine dieselEngine){
+        return dieselEngine;
     }
 
 
